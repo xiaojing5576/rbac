@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: finance-tax
+    name: rbac
   profiles:
     active: dev
 

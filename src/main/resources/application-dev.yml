@@ -3,11 +3,11 @@ spring:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      url: jdbc:oracle:thin:@172.31.231.113:1521:ORCL
-      username: finance_maint
-      password: weixianwu123
+      url: jdbc:oracle:thin:@ip:ORCL
+      username: username
+      password: password
 
 #cas 连接以及地址
 cas:
-  url: http://10.205.113.129:8888/cas/getmineV2
-  serviceId: 1536fe836cc4a802b1a81b6f20a13273
+  url: http://ip:port
+  serviceId: xxxxx
