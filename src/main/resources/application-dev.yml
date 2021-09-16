@@ -6,6 +6,11 @@ spring:
       url: jdbc:oracle:thin:@ip:ORCL
       username: username
       password: password
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6379
+    timeout: 3000
 
 #cas 连接以及地址
 cas:
