@@ -10,6 +10,7 @@ import com.jing.rbac.domain.User;
 import com.jing.rbac.domain.UserRole;
 import com.jing.rbac.shiro.model.UserRegistModel;
 import com.jing.rbac.shiro.util.CasClient;
+import com.jing.rbac.util.SessionUtil;
 import com.jing.rbac.util.SnowFlakeUtil;
 import com.jing.rbac.vo.LoginResultVO;
 import com.jing.rbac.vo.UserVO;
@@ -41,6 +42,9 @@ public class UserService extends ServiceImpl<UserMapper, User> {
 
     @Resource
     private CasClient casClient;
+
+    @Resource
+    private SessionUtil sessionUtil;
 
     @Resource
     private RoleService roleService;
@@ -114,6 +118,7 @@ public class UserService extends ServiceImpl<UserMapper, User> {
             userRole.setUserId(userVO.getUserId());
             userRoleMapper.insert(userRole);
         });
+        sessionUtil.expireSession(userVO.getUserId());
     }
 
 }
